@@ -5,13 +5,13 @@
 Summary:	The Emacs text editor for the X Window System
 
 Name:		emacs-snapshot
-Version:	22.0.94
-Release:	%mkrel 1.20070301.1
+Version:	22.0.98
+Release:	%mkrel 1.20070417.1
 License:	GPL
 Group:		Editors
 URL:		http://www.gnu.org/software/emacs/
 
-Source0:	emacs-snapshot.tar.bz2
+Source0:	ftp://alpha.gnu.org/gnu/emacs/pretest/emacs-%{version}.tar.bz2
 Source2:	gnu-mini.png
 Source3:	gnu-normal.png
 Source4:	gnu-large.png
@@ -28,8 +28,8 @@ Patch20:	emacs-20.4-ppc-config.patch
 Patch21:	emacs-20.4-ppc.patch
 Patch22:	emacs-21.1-omit-nocombreloc-ppc.patch
 
-Patch100:	emacs-22.0.93-infofix.patch
-Patch101:	emacs-21.2-version
+Patch100:	emacs-22.0.98-infofix.patch
+Patch101:	emacs-21.2-version.patch
 Patch103:	emacs-21.2-x86_64.patch
 Patch104:	emacs-21.2-hide-toolbar.patch
 Patch111:	emacs-22.0.93-ispell-dictionnaries-list-iso-8859-15.patch
@@ -196,7 +196,7 @@ Window System; install emacs-snapshot if you will be using X.
   rm -rf emacs-snapshot
 %endif
 
-%setup -q -n emacs-snapshot
+%setup -q -n emacs-%{version}
 
 perl -p -i -e 's/ctags/gctags/g' etc/etags.1
 
