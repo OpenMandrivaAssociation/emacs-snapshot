@@ -50,8 +50,8 @@ BuildRequires:  texinfo
 BuildRequires:	xpm-devel
 BuildRequires:	gtk+2-devel
 
-Requires(preun): /usr/sbin/update-alternatives
-Requires(post):  /usr/sbin/update-alternatives
+Requires(preun): update-alternatives
+Requires(post):  update-alternatives
 
 Requires:	emacs-snapshot-common = %version
 Provides:	emacs-bin
@@ -118,8 +118,8 @@ Group:		Editors
 Requires:	emacs-snapshot-common = %version
 Provides:	emacs-bin
 
-Requires(preun): /usr/sbin/update-alternatives
-Requires(post):  /usr/sbin/update-alternatives
+Requires(preun): update-alternatives
+Requires(post):  update-alternatives
 
 %description nox
 Emacs-nox is the Emacs text editor program without support for
@@ -136,8 +136,8 @@ Group:		Editors
 Requires:	emacs-snapshot-common = %version
 Provides:	emacs-bin
 
-Requires(preun): /usr/sbin/update-alternatives
-Requires(post):  /usr/sbin/update-alternatives
+Requires(preun): update-alternatives
+Requires(post):  update-alternatives
 
 %description gtk
 Emacs-gtk is the Emacs text editor program with support for
