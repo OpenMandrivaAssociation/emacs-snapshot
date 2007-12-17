@@ -35,7 +35,6 @@ Patch104:	emacs-21.2-hide-toolbar.patch
 Patch111:	emacs-22.0.93-ispell-dictionnaries-list-iso-8859-15.patch
 Patch114:	emacs-21.3-ppc64.patch
 
-BuildRoot:	%_tmppath/%name-root
 BuildRequires:	libxaw-devel
 BuildRequires:	Xaw3d-devel
 BuildRequires:	XFree86
