@@ -290,13 +290,6 @@ chmod -t $RPM_BUILD_ROOT%{_bindir}/emacs*
 
 
 # Menu support
-mkdir -p $RPM_BUILD_ROOT{%_menudir,%_liconsdir,%_miconsdir}
-cat > $RPM_BUILD_ROOT%{_menudir}/emacs << EOF
-?package(%{name}): needs=x11 section="More Applications/Editors" icon=emacs.png title=Emacs longtitle="Powerful editor" command=emacs-%version xdg="true"
-EOF
-cat > $RPM_BUILD_ROOT%{_menudir}/emacs-gtk << EOF
-?package(%{name}-gtk): needs=x11 section="More Applications/Editors" icon=emacs-gtk.png title="Emacs gtk" longtitle="Powerful editor (using gtk)" command=emacs-gtk xdg="true"
-EOF
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-emacs.desktop << EOF
@@ -491,7 +484,6 @@ update-alternatives --install %_bindir/emacs emacs %_bindir/emacs-gtk 29
 %doc src/COPYING
 %{_bindir}/emacs-gtk
 %{_datadir}/applications/mandriva-emacs-gtk.desktop
-%{_menudir}/emacs-gtk
 %{_iconsdir}/emacs-gtk.png
 %{_miconsdir}/emacs-gtk.png
 %{_liconsdir}/emacs-gtk.png
@@ -501,7 +493,6 @@ update-alternatives --install %_bindir/emacs emacs %_bindir/emacs-gtk 29
 %doc src/COPYING
 %{_bindir}/emacs-%version
 %{_datadir}/applications/mandriva-emacs.desktop
-%{_menudir}/emacs
 %{_iconsdir}/emacs.png
 %{_miconsdir}/emacs.png
 %{_liconsdir}/emacs.png
