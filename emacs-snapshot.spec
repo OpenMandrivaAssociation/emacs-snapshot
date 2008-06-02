@@ -432,7 +432,7 @@ update-alternatives --install %_bindir/emacs emacs %_bindir/emacs-gtk 29
 %files -f common-filelist common
 %defattr(-,root,root)
 %doc BUGS README src/COPYING
-%{_localstatedir}/games/emacs
+%{_localstatedir}/lib/games/emacs
 %dir %{_sysconfdir}/emacs/site-start.d
 %dir %{_sysconfdir}/emacs
 %config(noreplace) %{_sysconfdir}/emacs/site-start-snapshot.el
