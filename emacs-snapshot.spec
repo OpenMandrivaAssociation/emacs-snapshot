@@ -4,7 +4,7 @@ Summary:	The Emacs text editor for the X Window System
 
 Name:		emacs-snapshot
 Version:	23.0.94
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPLv3+
 Group:		Editors
 URL:		http://www.gnu.org/software/emacs/
@@ -201,13 +201,13 @@ export CFLAGS="$RPM_OPT_FLAGS $PUREDEF -fno-zero-initialized-in-bss"
 make bootstrap
 
 make distclean
-#Build binary without X support
+# Build binary without X support
 ./configure ${CONFOPTS} --with-x=no ${RPM_ARCH}-mandrake-linux --libdir=%_libdir
 make
 mv src/emacs src/nox-emacs
 
 make distclean
-#Build binary with X support
+# Build binary with X support
 ./configure ${CONFOPTS} --with-x-toolkit ${RPM_ARCH}-mandrake-linux --libdir=%_libdir
 make
 
@@ -222,11 +222,9 @@ ARCHDIR=${RPM_ARCH}-mandrake-linux
 rm -f %{buildroot}%_bindir/emacs
 rm -f %{buildroot}%{_infodir}/dir
 rm %{buildroot}%{_libdir}/emacs/%version/%_arch-mandrake-linux/fakemail
+
 # remove sun specific stuff
 rm -f %{buildroot}%{_datadir}/emacs/%version/etc/{emacstool.1,emacs.1,ctags.1,etags.1,sex.6}
-
-# move some man pages to the right place
-mv %{buildroot}%{_datadir}/emacs/%version/etc/*.1 $RPM_BUILD_ROOT%{_mandir}/man1/
 
 # rename ctags to gctags
 mv %{buildroot}%{_mandir}/man1/ctags.1 $RPM_BUILD_ROOT%{_mandir}/man1/gctags.1
@@ -234,7 +232,6 @@ mv %{buildroot}%{_bindir}/ctags $RPM_BUILD_ROOT%{_bindir}/gctags
 
 # is that needed?
 install -d %{buildroot}%{_libdir}/emacs/site-lisp
-
 
 mkdir -p %{buildroot}%{_sysconfdir}/emacs
 install -m 644 %{SOURCE5} %{buildroot}%{_sysconfdir}/emacs/site-start.el
@@ -349,7 +346,6 @@ update-alternatives --install %_bindir/emacs emacs %_bindir/emacs-nox 10
 %if %mdkversion < 200900
 %{update_menus}
 %endif
-
 
 %postun
 %if %mdkversion < 200900
