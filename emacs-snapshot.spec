@@ -4,7 +4,7 @@ Summary:	The Emacs text editor for the X Window System
 
 Name:		emacs-snapshot
 Version:	23.0.94
-Release:	%mkrel 2
+Release:	%mkrel 4
 License:	GPLv3+
 Group:		Editors
 URL:		http://www.gnu.org/software/emacs/
@@ -54,28 +54,31 @@ Requires(post):  update-alternatives
 Requires:	emacs-snapshot-common = %version
 Provides:	emacs-bin
 
+Obsoletes:	emacs < 23.0
 Obsoletes:	emacs-X11 < 22.0.50
 Provides:	emacs-X11 < 22.0.50
 
 %description
-Emacs-X11 includes the Emacs text editor program for use with the X
-Window System (it provides support for the mouse and other GUI
-elements). Emacs-X11 will also run Emacs outside of X, but it has a
-larger memory footprint than the 'non-X' Emacs package (emacs-nox).
+The emacs package provides the Emacs text editor program built with
+support for the X Window System (it provides support for the mouse and
+other GUI elements). The binary in this package will also run Emacs
+outside of X, but it has a larger memory footprint than the 'non-X'
+Emacs package (emacs-nox).
 
 Install emacs if you are going to use Emacs with the X Window System.
 You should also install emacs if you're going to run Emacs both with
-and without X (it will work fine both ways). You'll also need to install the
-emacs-common package in order to run Emacs.
+and without X (it will work fine both ways). You'll also need to
+install the emacs-common package in order to run Emacs.
 
 %package el
 Summary:	The sources for elisp programs included with Emacs
 Group:		Editors
 Requires:	emacs-snapshot-common = %version
+Obsoletes:	emacs-el < 23.0
 
 %description el
-Emacs-el contains the emacs-elisp sources for many of the elisp
-programs included with the main Emacs text editor package.
+The emacs-el package provides the emacs-elisp sources for many of the
+elisp programs included with the main Emacs text editor package.
 
 You need to install emacs-el only if you intend to modify any of the
 Emacs packages or see some elisp examples.
@@ -84,39 +87,39 @@ Emacs packages or see some elisp examples.
 Summary:	Emacs documentation
 Group:		Editors
 Requires:	emacs-snapshot-common = %version
+Obsoletes:	emacs-doc < 23.0
 
 %description doc
-The Emacs documentation.
+Documentation for Emacs.
 
 %package leim
 Summary:	Emacs Lisp code for input methods for internationalization
 Group:		Editors
 Requires:	emacs-snapshot-common = %version
+Obsoletes:	emacs-leim < 23.0
 
 %description leim
-The Emacs Lisp code for input methods for various international
-character scripts.
+The emacs-leim package provides the emacs-elisp code for input methods
+for various international character scripts.
 
 %package nox
 Summary:	The Emacs text editor without support for the X Window System
 Group:		Editors
 Requires:	emacs-snapshot-common = %version
 Provides:	emacs-bin
-
-# we don't want to provide it, only obsolete
-Obsoletes:	emacs-snapshot-nox < 22.1
+Obsoletes:	emacs-nox < 23.0
 
 Requires(preun): update-alternatives
 Requires(post):  update-alternatives
 
 %description nox
-Emacs-nox is the Emacs text editor program without support for
-the X Window System.
+The emacs-nox package provides the Emacs text editor program built
+without support for the X Window System.
 
 You need to install this package only if you plan on exclusively using Emacs
 without the X Window System (emacs will work both in X and out of X,
 but emacs-nox will only work outside of X). You'll also need to
-install the emacs package in order to run Emacs.
+install the emacs-common package in order to run Emacs.
 
 %package common
 Summary:	The libraries needed to run the GNU Emacs text editor
@@ -143,7 +146,11 @@ Provides:	eshell-emacs = 2.4.2
 Obsoletes:	emacs-easypg < 1.0.0
 Provides:	emacs-easypg = 1.0.0
 
+Obsoletes:	emacs-erc < 5.3
+Provides:	emacs-erc = 5.3
+
 Obsoletes:	emacs < 22.0.50
+Obsoletes:	emacs-common < 23.0
 Provides:	emacs < 22.0.50
 
 # conflicts due to %%_bindir/{b2m,etags,rcs-checkin}
@@ -179,6 +186,7 @@ perl -p -i -e 's/ctags/gctags/g' etc/etags.1
 %patch21 -p1
 %patch22 -p1
 %endif
+
 %patch100 -p1
 %patch101 -p1 -b .version
 %patch103 -p1 -b .x86_64
