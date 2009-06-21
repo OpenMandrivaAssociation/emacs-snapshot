@@ -3,8 +3,8 @@
 Summary:	The Emacs text editor for the X Window System
 
 Name:		emacs-snapshot
-Version:	23.0.94
-Release:	%mkrel 4
+Version:	23.0.95
+Release:	%mkrel 1
 License:	GPLv3+
 Group:		Editors
 URL:		http://www.gnu.org/software/emacs/
@@ -55,8 +55,8 @@ Requires:	emacs-snapshot-common = %version
 Provides:	emacs-bin
 
 Obsoletes:	emacs < 23.0
-Obsoletes:	emacs-X11 < 22.0.50
-Provides:	emacs-X11 < 22.0.50
+Obsoletes:	emacs-X11 < 23.0
+Provides:	emacs-X11 < 23.0
 
 %description
 The emacs package provides the Emacs text editor program built with
@@ -149,9 +149,9 @@ Provides:	emacs-easypg = 1.0.0
 Obsoletes:	emacs-erc < 5.3
 Provides:	emacs-erc = 5.3
 
-Obsoletes:	emacs < 22.0.50
+Obsoletes:	emacs < 23.0
 Obsoletes:	emacs-common < 23.0
-Provides:	emacs < 22.0.50
+Provides:	emacs < 23.0
 
 # conflicts due to %%_bindir/{b2m,etags,rcs-checkin}
 Conflicts: xemacs-extras
@@ -177,7 +177,7 @@ perl -p -i -e 's/ctags/gctags/g' etc/etags.1
 %patch1 -p1 -b .loadup
 %patch3 -p1 -b .ia64-2
 %patch5 -p1 -b .bzip2
-%patch6 -p1
+%patch6 -p1 -b .same-DOC
 %patch7 -p1 -b .rpath
 %patch9 -p1 -b .sendmail-program
 
@@ -191,7 +191,7 @@ perl -p -i -e 's/ctags/gctags/g' etc/etags.1
 %patch101 -p1 -b .version
 %patch103 -p1 -b .x86_64
 %patch104 -p1 -b .toolbar
-%patch111 -p1
+%patch111 -p1 -b .ispell-dictionaries
 %patch114 -p1 -b .ppc
 %patch115 -p1 -z .lzma-support
 %patch116 -p0 -b .str
