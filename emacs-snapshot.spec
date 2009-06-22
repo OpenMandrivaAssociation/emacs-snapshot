@@ -4,7 +4,7 @@ Summary:	The Emacs text editor for the X Window System
 
 Name:		emacs-snapshot
 Version:	23.0.95
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPLv3+
 Group:		Editors
 URL:		http://www.gnu.org/software/emacs/
@@ -53,10 +53,10 @@ Requires(post):  update-alternatives
 
 Requires:	emacs-snapshot-common = %version
 Provides:	emacs-bin
+Provides:	emacs-X11
+Provides:	emacs = %{version}-%{release}
 
-Obsoletes:	emacs < 23.0
-Obsoletes:	emacs-X11 < 23.0
-Provides:	emacs-X11 < 23.0
+Conflicts:	emacs < %{version}-%{release}
 
 %description
 The emacs package provides the Emacs text editor program built with
@@ -74,7 +74,7 @@ install the emacs-common package in order to run Emacs.
 Summary:	The sources for elisp programs included with Emacs
 Group:		Editors
 Requires:	emacs-snapshot-common = %version
-Obsoletes:	emacs-el < 23.0
+Conflicts:	emacs-el
 
 %description el
 The emacs-el package provides the emacs-elisp sources for many of the
@@ -87,7 +87,7 @@ Emacs packages or see some elisp examples.
 Summary:	Emacs documentation
 Group:		Editors
 Requires:	emacs-snapshot-common = %version
-Obsoletes:	emacs-doc < 23.0
+Conflicts:	emacs-doc
 
 %description doc
 Documentation for Emacs.
@@ -96,7 +96,7 @@ Documentation for Emacs.
 Summary:	Emacs Lisp code for input methods for internationalization
 Group:		Editors
 Requires:	emacs-snapshot-common = %version
-Obsoletes:	emacs-leim < 23.0
+Conflicts:	emacs-leim 
 
 %description leim
 The emacs-leim package provides the emacs-elisp code for input methods
@@ -107,7 +107,7 @@ Summary:	The Emacs text editor without support for the X Window System
 Group:		Editors
 Requires:	emacs-snapshot-common = %version
 Provides:	emacs-bin
-Obsoletes:	emacs-nox < 23.0
+Conflicts:	emacs-nox
 
 Requires(preun): update-alternatives
 Requires(post):  update-alternatives
@@ -149,9 +149,7 @@ Provides:	emacs-easypg = 1.0.0
 Obsoletes:	emacs-erc < 5.3
 Provides:	emacs-erc = 5.3
 
-Obsoletes:	emacs < 23.0
-Obsoletes:	emacs-common < 23.0
-Provides:	emacs < 23.0
+Conflicts:	emacs-common
 
 # conflicts due to %%_bindir/{b2m,etags,rcs-checkin}
 Conflicts: xemacs-extras
