@@ -4,7 +4,7 @@ Summary:	The Emacs text editor for the X Window System
 
 Name:		emacs-snapshot
 Version:	23.0.95
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	GPLv3+
 Group:		Editors
 URL:		http://www.gnu.org/software/emacs/
