@@ -4,7 +4,7 @@ Summary:	GNU Emacs text editor with X11 support
 
 Name:		emacs-snapshot
 Version:	23.1.94
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPLv3+
 Group:		Editors
 URL:		http://www.gnu.org/software/emacs/
@@ -134,8 +134,8 @@ Requires:	emacs-snapshot-common = %version
 Obsoletes:	gnus-emacs < 5.13.0
 Provides:	gnus-emacs = 5.13.0
 
-Obsoletes:	emacs-cedet < 1.0-0.pre7
-Provides:	emacs-cedet = 1.0-0.pre7
+Obsoletes:	emacs-snapshot-cedet < 1.0-0.pre7
+Provides:	emacs-snapshot-cedet = 1.0-0.pre7
 
 Conflicts:	emacs-speedbar < 1.0
 Provides:	emacs-speedbar = 1.0
