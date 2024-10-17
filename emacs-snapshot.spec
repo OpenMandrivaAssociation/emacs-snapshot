@@ -7,7 +7,7 @@ Version:	23.1.94
 Release:	%mkrel 2
 License:	GPLv3+
 Group:		Editors
-URL:		http://www.gnu.org/software/emacs/
+URL:		https://www.gnu.org/software/emacs/
 
 Source0:	ftp://alpha.gnu.org/gnu/emacs/pretest/emacs-%{version}.tar.gz
 Source2:	gnu-mini.png
