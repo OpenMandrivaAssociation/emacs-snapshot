@@ -39,6 +39,11 @@ Patch116:	emacs-22.3-fix-str-fmt.patch
 Patch117:	emacs-23.1.92-gtk-menus.patch
 
 BuildRoot:	%_tmppath/%name-root
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	libxaw-devel
 BuildRequires:	Xaw3d-devel
 BuildRequires:	x11-server-common
