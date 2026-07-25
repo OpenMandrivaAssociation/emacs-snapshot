@@ -4,7 +4,7 @@ Summary:	GNU Emacs text editor with X11 support
 
 Name:		emacs-snapshot
 Version:	23.1.94
-Release:	%mkrel 2
+Release:	3
 License:	GPLv3+
 Group:		Editors
 URL:		https://www.gnu.org/software/emacs/
